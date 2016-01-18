@@ -2,3 +2,270 @@
 Don't worry about all the content - it's an awfully long page.
 I picked this because it's a pretty simple layout.
  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Koa - next generation web framework for node.js</title>
+</head>
+<body>
+  <header>
+    <h1>koa</h1>
+    <h5>next generation web framework for node.js</h5>
+    <nav>
+      <ul>
+        <button type="button">contents</button>
+        <li><a href="introduction">introduction</a></li>
+        <li><a href="application">application</a></li>
+        <li><a href="context">context</a></li>
+        <li><a href="request">request</a></li>
+        <li><a href="response">response</a></li>
+        <li><a href="links">links</a></li>
+      </ul>
+    </nav>
+  </header>
+  <hgroup>
+    <h2>Introduction</h2>
+      <p>Koa is a new web framework...</p>
+    <h2>Installation</h2>
+      <p>Koa works out of the box with recent versions of Node. To use Koa with 0.11.x
+        you must use the <em>--harmony</em> or <em>--harmony-generators</em> flag.</p>
+      <code>$npm install koa<br>$node app.js</code>
+    <h2>Application</h2>
+      <p>A Koa application is an object containing an array of middleware generator functions which are composed and executed in a stack-like manner upon request. Koa is similar to many other middleware systems that you may have encountered such as Ruby's Rack, Connect, and so on - however a key design decision was made to provide high level <q>sugar</q> at the otherwise low-level middleware layer. This improves interoperability, robustness, and makes writing middleware much more enjoyable.</p>
+      <p>This includes methods for common tasks like content-negotiation, cache freshness, proxy support, and redirection among others. Despite supplying a reasonably large number of helpful methods Koa maintains a small footprint, as no middleware are bundled.</p>
+      <p>The obligatory hello world application:</p>
+        <code>var koa = require('koa');<br>var app = koa();
+          <br>app.use(function *(){
+          <br>this.body = 'Hello World';
+          <br>});
+          <br>app.listen(3000);</code>
+      <h3>Cascading</h3>
+        <p>Koa middleware cascade in a more traditional way as you may be used to with similar tools - this was previously difficult to make user friendly with node's use of callbacks. However with generators we can achieve <q>true</q> middleware. Contrasting Connect's implementation which simply passes control through series of functions until one returns, Koa yields <q>downstream</q>, then control flows back <q>upstream</q>.</p>
+        <p>The following example responds with <q>Hello World</q>, however first the request flows through the <em>x-response-time</em> and <em>logging</em> middleware to mark when the request started, then continue to yield control through the response middleware. When a middleware invokes <em>yield next</em> the function suspends and passes control to the next middleware defined. After there are no more middleware to execute downstream, the stack will unwind and each middleware is resumed to perform its upstream behaviour.</p>
+        <code>var koa = require('koa');
+          <br>var app = koa();
+        </code>
+        <code>// x-response-time</code>
+        <code>app.use(function *(next){
+          <br>var start = new Date;
+          <br>yield next;
+          <br>var ms = new Date - start;
+          <br>this.set('X-Response-Time', ms + 'ms';)
+          <br>});
+        </code>
+        <code>//logger</code>
+        <code>app.use(function *(next) {
+          <br>var start = new Date;
+          <br>yield next;
+          <br>var ms = newDate - start;
+          <br>console.log('%s %s - %s', this.method, thi.url, ms);
+          <br>});
+        </code>
+        <code>//response</code>
+        <code>app.use(function *(){
+          <br>this.body = 'Hello World';
+          <br>});
+        </code>
+        <code>app.listen(3000);</code>
+      <h3>Settings</h3>
+        <p>Application settings are properties on the <code>app</code> instance,
+          currently the following are supported:</p>
+          <ul>
+            <li><em>app.name</em> optionally give your application a name</li>
+            <li><em>app.env</em> defaulting to the <b>NODE_ENV</b> or <q>development</q></li>
+            <li><em>app.proxy</em> when true proxy header fields will be trusted</li>
+            <li><em>app.subdomainOffset</em> offset of <em>.subdomains</em> to ignore[2]</li>
+          </ul>
+      <h3>app.listen(...)</h3>
+        <p>A Koa application is not a 1-to-1 representation of an HTTP server. One or more Koa applications may be mounted together to form larger applications with a single HTTP server.</p>
+        <p>Create and return an HTTP server, passing the given arguments to <em>Server#listen().</em>
+          These arguments are documented on <a href="https://nodejs.org/api/http.html#http_server_listen_port_hostname_backlog_callback">
+          nodejs.org</a>. The following is a useless Koa application bound to port 3000:</p>
+        <code>var koa = require('koa');
+          <br>var app = koa();
+          <br>app.listen(3000);
+        </code>
+        <p>The <em>app.listen(...)</em> method is simply sugar for the following:</p>
+        <code>var http = require('http');
+          <br>var koa = require('koa');
+          <br>var app = koa();
+          <br>http.createServer(app.callback()).listen(3000);
+        </code>
+        <p>This means you can spin up the same application as both HTTP and HTTPS or on multiple addresses:</p>
+        <code>var http = require('http');
+          <br>var koa = require('koa');
+          <br>var app = koa();
+          <br>http.createServer(app.callback()).listen(3000);
+          <br>http.createServer(app.callback()).listen(3001);
+        </code>
+      <h3>app.callback()</h3>
+        <p>Return a callback function suitable for the <em>http.createServer()</em>method to handle a request.
+          You may also use this callback function to mount your koa app in a Connect/Express app.</p>
+      <h3>app.use(function)</h3>
+        <p>Add the given middleware function to this application. See <a href="https://github.com/koajs/koa/wiki#middleware">Middleware</a> for more information.</p>
+      <h3>app.keys=</h3>
+        <p>Set signed cookie keys.</p>
+        <p>These are passed to <a href="https://github.com/crypto-utils/keygrip">KeyGrip</a>, however
+          you may also pass your own <em>KeyGrip</em> instance. For example the following are acceptable:</p>
+        <code>app.keys = ['im a newer secret', 'i like turtle'];
+          <br>app.keys = new KeyGrip(['im a newer secret', 'i like turtle'], 'sha256');
+        </code>
+        <p>These keys may be rotated and are used when signing cookies with the <em>{ signed: true }</em> option:</p>
+        <code>this.cookies.set('name', 'tobi', { signed: true });</code>
+      <h3>app.context</h3>
+        <p>The recommended namespace to extend with information that's useful throughout the lifetime of your application, as opposed to a per request basis.</p>
+        <code>app.context.db = db();</code>
+      <h3>Error Handling</h3>
+        <p>By default outputs all errors to stderr unless <b>NODE_ENV</b> is <q>test</q>. To perform custom
+          error-handling logic such as centralized logging you can add an <q>error</q> event listener:</p>
+        <code>app.on('error', function(err){
+          <br>log.error('server error', err);
+          <br>});
+        </code>
+        <p>If an error in the req/res cycle and it is <i>not</i> possible to respond to the client, the
+          <em>Context</em> instance is also passed:</p>
+        <code>app.on('error', function(err, ctx){
+          <br>log.error('server error', err, ctx);
+          <br>});
+        </code>
+        <p>When an error occurs <i>and</i> it is still possible to respond to the client, aka no data has been
+          written to the socket, Koa will respond appropriately with a 500 <q>Internal Server Error</q>. In either
+          case an app-level <q>error<q> is emitted for logging purposes.</p>
+    <h2>Context</h2>
+      <p>A Koa Context encapsulates node's request and response objects into a single object which provides many helpful methods for writing web applications and APIs. These operations are used so frequently in HTTP server development that they are added at this level instead of a higher level framework, which would force middleware to re-implement this common functionality.</p>
+      <p>A <em>Context</em> is created <i>per</i> request, and is referenced in middleware as the receiver, or the              <em>this</em> identifier, as shown in the following snippet:</p>
+      <code>app.use(function *() {
+        <br>this; // is the Context
+        <br>this.request; // is a koa request
+        <br>this.response; // is a koa Response
+        <br>});
+      </code>
+      <p>Many of the context's accessors and methods simply delegate to their <em>ctx.request</em> or <em>ctx.response</em> equivalents for convenience, and are otherwise identical. For example <em>ctx.type</em> and <em>ctx.length</em> delegate to the <em>response</em> object, and <em>ctx.path</em> and <em>ctx.method</em> delegate to the <em>request</em>.</p>
+      <h3>API</h3>
+        <p><em>Context</em> specific methods and accessors.</p>
+      <h3>ctx.req</h3>
+        <p>Node's <em>request</em> object.</p>
+      <h3>ctx.res</h3>
+        <p>Node's <em>response</em> object.</p>
+        <p>Bypassing Koa's response handling is <b>not supported</b>. Avoid using the following node properties:</p>
+          <ul>
+            <code>
+            <li>res.statusCode</li>
+            <li>res.writeHead()</li>
+            <li>res.write()</li>
+            <li>res.end()</li>
+            </code>
+          </ul>
+      <h3>ctx.request</h3>
+        <p>A koa <em>Request</em> object.</p>
+      <h3>ctx.response</h3>
+        <p>A koa <em>Response</em> object.</p>
+      <h3>ctx.state</h3>
+        <p>The recommended namespace for passing information through middleware and to your frontend views.</p>
+        <code>this.state.user = yield User.find(id);</code>
+      <h3>ctx.app</h3>
+        <p>Application instance reference.</p>
+      <h3>ctx.cookies.get(name, [options])</h3>
+        <p>Get cookie <em>name</em> with <em>options</em>:</p>
+        <ul>
+          <li><em>signed</em> the cookie requested should be signed</li>
+        </ul>
+        <p>koa uses the <a href="https://github.com/pillarjs/cookies">cookies</a> module where options are simply passed.</p>
+      <h3>ctx.cookies.set(name, value, [options])</h3>
+        <p>Set cookie <em>name</em> to <em>value</em> with <em>options</em>:</p>
+        <ul>
+          <li><em>signed</em> sign the cookie value</li>
+          <li><em>expires</em> a <em>date</em> for cookie expiration</li>
+          <li><em>path</em> cookie path, /' by default</li>
+          <li><em>domain</em> cookie domain</li>
+          <li><em>secure</em> secure cookie</li>
+          <li><em>httpOnly</em> server-accessible cookie, <b>true</b> by default</li>
+        </ul>
+        <p>koa uses the <a href="https://github.com/pillarjs/cookies">cookies</a> module where options are simply passed.</p>
+      <h3>ctx.throw([msg], [status], [properties])</h3>
+        <p>Helper method to throw an error with a <em>.status</em> property defaulting to <em>500</em> that will allow Koa to respond appropriately. The following combinations are allowed:</p>
+        <code>this.throw(403);
+          <br>this.throw('name required', 400);
+          <br>this.throw(400, 'name required');
+          <br>this.throw('something exploded');
+        </code>
+        <p>For example <em>this.throw('name required', 400)</em> is equivalent to:</p>
+        <code>var err = new Error('name required');
+          <br>err.status = 400;
+          <br>throw err;
+        </code>
+        <p>Note that these are user-level errors and are flagged with <em>err.expose</em> meaning the messages are appropriate for client responses, which is typically not the case for error messages since you do not want to leak failure details.</p>
+        <p>You may optionally pass a <em>properties</em> object which is merged into the error as-is, useful for decorating machine-friendly errors which are reported to the requester upstream.</p>
+        <code>this.throw(401, 'access_denied', { user: user });
+          <br>this.throw('access_denied', { user: user });
+        </code>
+        <p>koa uses <a href="https://github.com/jshttp/http-errors">http-errors</a> to create errors.</p>
+      <h3>ctx.assert(value, [msg], [status], [properties])</h3>
+        <p>Helper method to throw an error simliar to <em>.throw()</em> when <em>!value</em>.</p>
+        <code>this.assert(this.state.user, 401, 'User not found. Please login!');</code>
+        <p>koa uses <a href="https://github.com/jshttp/http-assert">http-assert</a> for assertions.</p>
+      <h3>ctx.respond</h3>
+        <p>To bypass Koa's built-in response handling, you may explicitly set <em>this.respond = false;</em>. Use this if you want to write to the raw <em>res</em> object instead of letting Koa handle the response for you.</p>
+        <p>Note that using this is <b>not</b> supported by Koa. This may break intended functionality of Koa middleware and Koa itself. Using this property is considered a hack and is only a convenience to those wishing to use traditional <em>fn(req, res)</em> functions and middleware within Koa.</p>
+      <h3>Request aliases</h3>
+        <p>the following accessors and alias <a href="http://koajs.com/#request">Request</a>:</p>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      <h3>Response aliases</h3>
+        <p></p>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+    <h2>Request</h2>
+  </hgroup>
+</body>
+</html>
