@@ -26,7 +26,7 @@ I picked this because it's a pretty simple layout.
   </header>
   <hgroup>
     <h2>Introduction</h2>
-      <p>Koa is a new web framework...</p>
+      <p>Koa is a new web framework designed by the team behind Express, which aims to be a smaller, more expressive, and more robust foundation for web applications and APIs. Through leveraging generators Koa allows you to ditch callbacks and greatly increase error-handling. Koa does not bundle any middleware within core, and provides an elegant suite of methods that make writing servers fast and enjoyable.</p>
     <h2>Installation</h2>
       <p>Koa works out of the box with recent versions of Node. To use Koa with 0.11.x
         you must use the <em>--harmony</em> or <em>--harmony-generators</em> flag.</p>
@@ -211,61 +211,148 @@ I picked this because it's a pretty simple layout.
       <h3>Request aliases</h3>
         <p>the following accessors and alias <a href="http://koajs.com/#request">Request</a>:</p>
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>ctx.header</li>
+          <li>ctx.headers</li>
+          <li>ctx.method</li>
+          <li>ctx.method=</li>
+          <li>ctx.url</li>
+          <li>ctx.url=</li>
+          <li>ctx.originalUrl</li>
+          <li>ctx.origin</li>
+          <li>ctx.href</li>
+          <li>ctx.path</li>
+          <li>ctx.path=</li>
+          <li>ctx.query</li>
+          <li>ctx.query=</li>
+          <li>ctx.querystring</li>
+          <li>ctx.querystring=</li>
+          <li>ctx.host</li>
+          <li>ctx.hostname</li>
+          <li>ctx.fresh</li>
+          <li>ctx.stale</li>
+          <li>ctx.socket</li>
+          <li>ctx.protocol</li>
+          <li>ctx.secure</li>
+          <li>ctx.ip</li>
+          <li>ctx.ips</li>
+          <li>ctx.subdomains</li>
+          <li>ctx.is()</li>
+          <li>ctx.accepts()</li>
+          <li>ctx.acceptsEncodings()</li>
+          <li>ctx.acceptsCharsets()</li>
+          <li>ctx.acceptsLanguages()</li>
+          <li>ctx.get()</li>
         </ul>
       <h3>Response aliases</h3>
-        <p></p>
+        <p>The following accessors and alias <a href="http://koajs.com/#response">Response</a> equivalents:</p>
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>ctx.body</li>
+          <li>ctx.body=</li>
+          <li>ctx.status</li>
+          <li>ctx.status=</li>
+          <li>ctx.message</li>
+          <li>ctx.message=</li>
+          <li>ctx.length=</li>
+          <li>ctx.length</li>
+          <li>ctx.type=</li>
+          <li>ctx.type</li>
+          <li>ctx.headerSent</li>
+          <li>ctx.redirect()</li>
+          <li>ctx.attachment()</li>
+          <li>ctx.set()</li>
+          <li>ctx.append()</li>
+          <li>ctx.remove()</li>
+          <li>ctx.lastModified=</li>
+          <li>ctx.etag=</li>
         </ul>
     <h2>Request</h2>
+      <p>A Koa <em>Request</em> object is an abstraction on top of node's vanilla request object, providing additional functionality that is useful for every day HTTP server development.</p>
+      <h3>API</h3>
+      <h3>request.header</h3>
+        <p>Request header object.</p>
+      <h3>request.headers</h3>
+        <p>Request header object. Alias as <em>request.header</em>.</p>
+      <h3>request.method</h3>
+        <p>Request method.</p>
+      <h3>request.method=</h3>
+        <p>Set request method, useful for implementing middleware such as <em>methodOverride()</em>.</p>
+      <h3>request.length</h3>
+        <p>Return request Content-Length as a number when present, or <em>undefined</em>.</p>
+      <h3>request.url</h3>
+        <p>Get request URL.</p>
+      <h3>request.url=</h3>
+        <p>Set request URL, useful for url rewrites.</p>
+      <h3>request.originalUrl</h3>
+        <p>Get request original URL.</p>
+      <h3>request.origin</h3>
+        <p>Get origin of URL, include <em>protocol</em> and <em>host</em>.</p>
+        <code>this.request.origin
+          <br>// => http://example.com
+        </code>
+      <h3>request.href</h3>
+        <p>Get full request URL, include <em>protocol, host</em> and <em>url</em>.</p>
+        <code>this.request.href
+          <br>// => http://example.com/foo/bar?q=1
+        </code>
+      <h3>request.path</h3>
+        <p>Get request pathname.</p>
+      <h3>request.path=</h3>
+        <p>Set request pathname and retain query-string when present.</p>
+      <h3>request.querystring</h3>
+        <p>Get raw query string void of <em>?</em>.</p>
+      <h3>request.querystring=</h3>
+        <p>Set raw query string.</p>
+      <h3>request.search</h3>
+        <p>Get raw query string with the <em>?</em>.</p>
+      <h3>request.search=</h3>
+        <p>Set raw query string.</p>
+      <h3>request.host</h3>
+        <p>Get host (hostname:port) when present. Supports <em>X-Forwarded-Host</em> when <em>app.proxy</em> is           <b>true</b>, otherwise <em>Host</em> is used.</p>
+      <h3>request.hostname</h3>
+        <p>Get hostname when present. Supports <em>X-Forwarded-Host</em> when <em>app.proxy</em> is <b>true</b>, otherwise <em>Host</em> is used.</p>
+      <h3>request.type</h3>
+        <p>Get request <em>Content-Type</em> void of parameters such as <q>charset</q>.</p>
+        <code>var ct = this.request.type;
+          <br>// => "image/png"
+        </code>
+      <h3>request.charset</h3>
+        <p>Get request charset when present, or <em>undefined</em>:</p>
+        <code>this.request.charset
+          <br>// => "utf-8"
+        </code>
+      <h3>request.query</h3>
+        <p>Get parsed query-string, returning an empty object when no query-string is present. Note that this getter does <i>not</i> support nested parsing.</p>
+        <p>For example <q>color=blue&size=small</q>:</p>
+        <code>{
+          <br>color: 'blue',
+          <br>size: 'small'
+          <br>}
+        </code>
+      <h3>request.query=</h3>
+        <p>Set query-string to the given object. Note that this setter does <i>not</i> support nested objects.</p>
+        <code>this.query = { next: '/login' };</code>
+      <h3>request.fresh</h3>
+        <p>Check if a request cache is <q>fresh</q>, aka the contents have not changed. This method is for cache negotiation between <em>If-None-Match/ETag</em>, and <em>If-Modified-Since</em> and <em>Last-Modified</em>. It should be referenced after setting one or more of these response headers.</p>
+        <code>// freshness check requires status 20x or 304
+          <br>this.status = 200;
+          <br>this.set('ETag', '123');
+        </code>
+        <code>// cache is ok
+          <br>if (this.fresh) {
+          <br>this.status = 304;
+          <br>return;
+          <br>}
+        </code>
+        <code>// cache is stale
+          <br>// fetch new data
+          <br>this.body = yield db.find('something');
+        </code>
+      <h3>request.stale</h3>
+        <p>Inverse of <em>request.fresh</em>.</p>
+      <h3>request.protocol</h3>
+        <p>Return request protocol, <q>https</q> or <q>http</q>. Supports <em>X-Forwarded-Proto</em> when <em>app.proxy</em> is <b>true</b>.</p>
+      <h3>request.secure</h3>
+        <p>Shorthand for <em>this.protocol == <q>https</q></em> to check if a request was issued via TLS.</p>  
   </hgroup>
 </body>
 </html>
