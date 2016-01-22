@@ -21,19 +21,19 @@ Forms are important!
     </section>
     <section>
       <h2>You're covered</h2>
-      <h4>Unlimited storage, 25MB of photo and video attachments, advanced spam filters, virus protection - all as part of your Inbox.</h4>
+      <h4>Unlimited storage, 25MB of photo <br>and video attachments, advanced spam <br>filters, virus protection - all as part of <br>your Inbox.</h4>
       <img src="http://thumb101.shutterstock.com/photos/display_pic_with_logo/2390648/208349443.jpg" alt="Mail Icon" height="25" width="25">
       <img src="https://www.presentationpro.com/images/product/medium/slide/PPP_IFlat_LT3_Flat_Paper_Clip_01_Circle.jpg" alt="Email Attachment Icon" height="25" width="25">
       <img src="https://image.freepik.com/free-icon/inbox--appbar_318-32164.png" alt="Inbox Icon" height="25" width="25">
     </section>
     <section>
       <h2>Stay connected wherever you go</h2>
-      <h4>Connect on mail, chat or text using your favorite laptop, tablet or mobile device.</h4>
+      <h4>Connect on mail, chat or text using your <br>favorite laptop, tablet or mobile device.</h4>
       <img src="https://cdn2.iconfinder.com/data/icons/modern-future-technology-2/128/apple-devices-2-128.png" alt="Device Icon" height="100" width="100">
     </section>
     <section>
       <h2>More than just mail</h2>
-      <h4>Right from your Inbox - get direct access to the latest headlines and productivity tools to make life simpler.</h4>
+      <h4>Right from your Inbox - get direct access <br>to the latest headlines and productivity <br>tools to make life simpler.</h4>
       <img src="http://spreadsheetsapp.com/img/huffington_post.png" alt="Huffington Post Icon" height="50" width="100">
       <br>
       <img src="http://vignette1.wikia.nocookie.net/logopedia/images/b/b2/AIM.png/revision/latest/scale-to-width-down/250?cb=20140920233828" alt="aim logo" height="40" width="60">
@@ -42,8 +42,90 @@ Forms are important!
   <form action="https://i.aol.com/reg/signup" method="post">
     <fieldset>
       <h2>Let's create your account</h2>
-      <label for="name">Name</label>
-        <input type="text" name="name"><br></input>
-
+      <p><label for="name">Name</label>
+        <br>
+        <input type="text" name="name" placeholder="First Name" size="22" minlength="2" maxlength="50" required>
+        <input type="text" name="name" placeholder="Last Name" size="25" minlength="2" maxlength="50" required>
+      </p>
+      <p><label for="username">Pick a username</label>
+        <br>
+        <input type="text" name="username" placeholder="@aol.com" size="50" minlength="3" maxlength="100" required>
+      </p>
+      <p><label for="password">Create a password</label>
+        <br>
+        <input type="password" name="password" size="50" minlength="8" maxlength="16" required>
+      </p>
+      <p><label for="confirmPassword">Confirm password</label>
+        <br>
+        <input type="password" name="confirmPassword" size="50" minlength="8" maxlength="16" required>
+      </p>
+      <p><label for="birthdate">Date of birth</label>
+        <br>
+        <select name="birthMonth" required>
+          <option value="" disabled selected>Select month</option>
+          <option value="january">January</option>
+          <option value="february">February</option>
+          <option value="march">March</option>
+          <option value="april">April</option>
+          <option value="may">May</option>
+          <option value="june">June</option>
+          <option value="july">July</option>
+          <option value="august">August</option>
+          <option value="september">September</option>
+          <option value="october">October</option>
+          <option value="november">November</option>
+          <option value="december">December</option>
+        </select>
+        <input type="number" name="day" min="1" max="31" placeholder="Day(dd)" required>
+        <input type="number" name="year" placeholder="Year(yyyy)" required>
+      </p>
+      <p><label for="gender">Gender</label>
+        <br>
+        <select name="gender" required>
+          <option value="" disabled selected>Select gender</option>
+          <option value="female">Female</option>
+          <option value="Male">Male</option>
+        </select>
+      </p>
+      <p><label for="Zip code">Zip code</label>
+        <br>
+        <input type="number" name="zipCode" size="50" minlength="5" maxlength="10" required>
+      </p>
+      <p><label for="securityQ">Set a Security Question</label>
+        <br>
+        <select name="securityQ" required>
+          <option value="" disabled selected>Select a security question</option>
+          <option value="book">What was your favorite childhood book?</option>
+          <option value="parents">In what city did your parents meet?</option>
+          <option value="concert">What was the first concert you saw?</option>
+          <option value="nickname">What was your childhood nickname?</option>
+          <option value="pet">What was the name of your first pet?</option>
+          <option value="school">What was the name of your first school?</option>
+        </select>
+        <br>
+        <input type="text" name="securityAnswer" size="50" placeholder="Type in your answer" required>
+      </p>
+      <!-- I am not going to make the drop-down list of every country and their int'l calling codes, just North America because it would take me multiple days just to type them all up. -->
+      <p><label for="phone">Mobile phone</label>
+        <select name="country" required>
+          <option value="" selected>USA</option>
+          <option value="canada">Canada</option>
+          <option value="mexico">Mexico</option>
+        </select>
+        <input type="number" name="phoneNumber" size="12" maxlength="10" placeholder="123-456-7890">
+      </p>
+      <p><label for="altEmail">Alternate email</label>
+        <br>
+        <input type="text" size="50">
+      </p>
+      <footer id="fineprint">
+        <font size="1">
+        <p>By clicking "Sign Up" below, you electronically agree to our <a href="http://legal.aol.com/TOS">Terms of Service</a><br> and <a href="http://privacy.aol.com/">Privacy Policy</a> (the "Terms"); you acknowledge receipt of our Terms, and <br> you agree to receive notices and disclosures from us electronically, including <br> any updates of these Terms.</font> <button type="button">Sign Up</button></p>
+        <font size="1">
+        <p><a href="http://www.aol.com/">AOL Inc.</a> | <a href="http://legal.aol.com/TOS">Terms of Service</a> | <a href="http://privacy.aol.com/">Privacy Policy</a> | <a href="">Help</a> &copy; AOL Inc. All Rights Reserved</p>
+      </font>
+      </footer>
     </fieldset>
   </form>
+</body>
+</html>
