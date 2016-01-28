@@ -8,4 +8,8 @@ By the end of this, I want you to have the confidence to approach nearly any sta
 
 In contrast to the HTML section, this section will have each exercise separated into its own folder.
 
+##Notes
+
+*Spend some time getting to know your dev tools.* The more you know your way around them, the faster you will go. Coding all your CSS in a text editor without looking at the actual page while you do it is something to aspire to, not something to start with. 
+
 Good luck!
