@@ -11,13 +11,13 @@ h1 {
   text-align:center;
 }
 
-/*#header-nav {
-  height: 10px;
-  padding: 10px;
-  margin: 40px;
-  border: solid black;
-  display: inline;
-}*/
+#header-nav {
+  /*height: 10px;*/
+  /*padding: 10px;*/
+  margin: 1%;
+  border: 2px solid black;
+  /*display: inline;*/
+}
 
 .nav-link {
   margin: 10px;
@@ -59,20 +59,27 @@ section {
 h3 {
   float:left;
   margin-bottom: 20px;
+  position: relative;
 }
 
-/*.article-text {
+.article-text {
+  width: 67%;
 
-}*/
+}
 
 img {
   width: 170px;
   height: 160px;
 }
 
-/*#article-two-img {
-
-}*/
+#article-two-img {
+  clear: left;
+  position: relative;
+  left: 30px;
+  top: 30px;
+  right: 30px;
+  bottom: 30px;
+}
 
 aside {
   width: 30%;
@@ -82,7 +89,11 @@ aside {
 
 #aside-image {
   width: 220px;
+}
 
+#article-divider {
+  border: 1px solid black;
+  width: 67%;
 }
 
 /*.aside-nav {
