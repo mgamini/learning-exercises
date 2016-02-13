@@ -1,29 +1,30 @@
 body {
   font-family: sans-serif;
   border-style: solid;
+  width: 90%;
+  margin: auto;
 }
 
-/*header {
-
-}*/
+header {
+  padding: 20px;
+}
 
 h1 {
   text-align:center;
 }
 
 #header-nav {
-  /*height: 10px;*/
-  /*padding: 10px;*/
-  margin: 1%;
+  margin: 2%;
   border: 2px solid black;
-  /*display: inline;*/
+  padding: inherit;
 }
 
 .nav-link {
   margin: 10px;
 }
 
-.first-navs {
+.first-navs,
+.third-navs {
   display: inline-block;
   padding: 5px;
 }
@@ -31,25 +32,20 @@ h1 {
 #solo-nav {
   display: inline-block;
   padding: 5px;
-  border: solid black;
+  border: 2px solid black;
   background-color: #b7b7b8;
 }
 
-.third-navs {
-  display: inline-block;
-  padding: 5px;
+a {
+
 }
-
-/*a {
-
-}*/
 
 main {
   padding: 40px;
 }
 
 section {
-  padding: 40px;
+
 }
 
 .main-article {
@@ -64,7 +60,7 @@ h3 {
 
 .article-text {
   width: 67%;
-
+  float: left;
 }
 
 img {
@@ -73,12 +69,17 @@ img {
 }
 
 #article-two-img {
-  clear: left;
-  position: relative;
-  left: 30px;
-  top: 30px;
-  right: 30px;
-  bottom: 30px;
+  float: right;
+}
+
+#article-img-p {
+  float: right;
+  margin: 10px;
+  width: 50%;
+}
+
+#second-p {
+  float: left;
 }
 
 aside {
@@ -89,6 +90,7 @@ aside {
 
 #aside-image {
   width: 220px;
+  vertical-align: middle;
 }
 
 #article-divider {
@@ -96,10 +98,10 @@ aside {
   width: 67%;
 }
 
-/*.aside-nav {
+.aside-nav {
 
 }
 
 .aside-link {
 
-}*/
+}
