@@ -1,0 +1,109 @@
+/* Note: This is a pretty typical example of how I might organize my CSS.
+Layout contains the CSS that lays out the main content areas, and then
+each area has its own styles. The `header` tag, for example, might have
+a float or width applied in LAYOUT, and any other styling under HEADER.
+This is just my preference.
+
+I'm pretty sure you shouldn't need any selectors I have not created below.
+They're not the most efficient selectors and there are a lot of ways they
+could be optimized, but I'm keeping it simple for this exercise. */
+
+/*===================
+GENERAL
+===================*/
+
+*, *:before, *:after {
+
+}
+
+
+/*===================
+LAYOUT
+===================*/
+
+#wrapper {
+
+}
+
+header {
+
+}
+
+main {
+
+}
+
+#content {
+
+}
+
+#sidebar {
+
+}
+
+
+/*===================
+HEADER
+===================*/
+
+header {
+  background: rgba(0,100,0,0.1);
+}
+
+h1 {
+
+}
+
+#nav-main {
+
+}
+
+#nav-main ul {
+
+}
+
+#nav-main li {
+
+}
+
+
+/*===================
+MAIN
+===================*/
+
+main {
+  background: rgba(100,0,0,0.1);
+}
+
+#content {
+  background: rgba(0,0,100,0.1);
+}
+
+article {
+  background: rgba(100,0,100,0.1);
+}
+
+.article-header {
+
+}
+
+.img-float-right {
+
+}
+
+
+/*===================
+SIDEBAR
+===================*/
+
+#sidebar {
+  background: rgba(0,0,100,0.1);
+}
+
+#sidebar ul {
+
+}
+
+#sidebar li {
+
+}
