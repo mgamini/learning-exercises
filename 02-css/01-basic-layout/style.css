@@ -22,11 +22,11 @@ LAYOUT
 ===================*/
 
 #wrapper {
-
+  margin: 25px;
 }
 
 header {
-
+  text-align: center;
 }
 
 main {
@@ -34,11 +34,11 @@ main {
 }
 
 #content {
-
+  float: left;
 }
 
 #sidebar {
-
+  float: right;
 }
 
 
@@ -55,15 +55,17 @@ h1 {
 }
 
 #nav-main {
-
+  margin: 15px;
 }
 
 #nav-main ul {
+  border: 2px solid black;
 
 }
 
 #nav-main li {
-
+  display: inline-block;
+  margin: 0px 10px 10px 10px;
 }
 
 
@@ -84,11 +86,12 @@ article {
 }
 
 .article-header {
-
+  float: left;
+  padding: 10px 0px 10px 10px;
 }
 
 .img-float-right {
-
+  float: right;
 }
 
 
@@ -98,6 +101,7 @@ SIDEBAR
 
 #sidebar {
   background: rgba(0,0,100,0.1);
+  display: inline-block;
 }
 
 #sidebar ul {
@@ -105,5 +109,6 @@ SIDEBAR
 }
 
 #sidebar li {
-
+  float: left;
+  border-bottom: 2px solid black;
 }
