@@ -11,12 +11,16 @@ Build the screenshot, using floats as your primary method. Floats are, in many w
 
 I've updated this folder with a new kind of challenge. Having to think about all the different things at once muddies the water a bit, and obfuscates the parts I want you to focus on, so I'm changing the exercise.
 
-In this folder, you'll find three files: index.html, style.css, and screenshot2.png. Your task is to update style.css and ONLY style.css to make it look like the screenshot (more or less). 
+In this folder, you'll find three files: index.html, style.css, and screenshot2.png. Your task is to update style.css and ONLY style.css to make it look like the screenshot (more or less).
 
-I want you to finish this by end of day tomorrow (Feb 17). 
+I want you to finish this by end of day tomorrow (Feb 17).
 
 Also! Once you get this, I want you to add a note in the README here that says you got it, commit, and open a pull request. Set a timer for yourself. Every hour you work on it, I want you to commit whatever you've got, and push it up into the PR where I can see it.
 
-It's scary! It's pressure! But it's ok, it's only me. If you have a question in particular, ping me on IM, or add @mgamini in one of your hourly commits, and I'll get a notification. 
+It's scary! It's pressure! But it's ok, it's only me. If you have a question in particular, ping me on IM, or add @mgamini in one of your hourly commits, and I'll get a notification.
 
 Get only as far as you can. There is no way to fail, this is all for you.
+
+=======
+
+Ready to roll! Timer set!
