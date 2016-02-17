@@ -34,7 +34,8 @@ header {
 main {
   width: 100%;
   padding: 20px;
-  position: absolute;
+  float: left;
+  /*position: absolute;*/
   /*clear: both;*/
 }
 
