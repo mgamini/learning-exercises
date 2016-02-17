@@ -24,6 +24,7 @@ LAYOUT
 #wrapper {
   width: 960px;
   margin: 0px auto;
+  background: rgba(0,100,100,0.1);
 }
 
 header {
@@ -129,4 +130,12 @@ SIDEBAR
   border-bottom: 2px solid black;
   padding: 5px;
 
+}
+
+/*===================
+FOOTER
+===================*/
+
+footer {
+  background: white;  
 }
