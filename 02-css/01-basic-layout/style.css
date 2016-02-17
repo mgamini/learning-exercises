@@ -22,23 +22,33 @@ LAYOUT
 ===================*/
 
 #wrapper {
-
+  width: 960px;
+  margin: 0px auto;
 }
 
 header {
-
+  width: 100%;
+  text-align: center;
 }
 
 main {
-
+  width: 100%;
+  padding: 20px;
+  float: left;
+  /*position: absolute;*/
+  /*clear: both;*/
 }
 
 #content {
-
+  width: 66%;
+  float: left;
+  /*clear: both;*/
 }
 
 #sidebar {
-
+  width: 33%;
+  float: right;
+  /*clear: right;*/
 }
 
 
@@ -51,19 +61,22 @@ header {
 }
 
 h1 {
-
+  padding-top: 20px;
 }
 
 #nav-main {
-
+  padding-bottom: 10px;
 }
 
 #nav-main ul {
-
+  border: 2px solid black;
+  padding-left: 0px;
+  margin: 0px 15px;
 }
 
 #nav-main li {
-
+  display: inline-block;
+  margin: 10px 20px;
 }
 
 
@@ -73,22 +86,27 @@ MAIN
 
 main {
   background: rgba(100,0,0,0.1);
+  width: 960px;
 }
 
 #content {
   background: rgba(0,0,100,0.1);
+  padding: 5px 0px;
 }
 
 article {
   background: rgba(100,0,100,0.1);
+  margin: 20px;
+  padding: 20px;
 }
 
 .article-header {
-
+  margin: auto;
+  padding: 10px;
 }
 
 .img-float-right {
-
+  float: right;
 }
 
 
@@ -98,12 +116,17 @@ SIDEBAR
 
 #sidebar {
   background: rgba(0,0,100,0.1);
+  padding: 20px;
 }
 
 #sidebar ul {
-
+  list-style-type: none;
+  padding-left: 0px;
+  /*float: left;*/
 }
 
 #sidebar li {
+  border-bottom: 2px solid black;
+  padding: 5px;
 
 }
