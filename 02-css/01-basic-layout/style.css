@@ -21,20 +21,11 @@ GENERAL
 LAYOUT
 ===================*/
 
-/*html {
-  width: 960px;
-  margin: 0px auto;
-  background: rgba(0,100,100,0.1);
-}*/
-
 #wrapper {
-  width: 100%;
-  margin-left: 20px;
+  width: 960px;
+  margin: 0px auto;;
   background: rgba(0,100,100,0.1);
-  padding: 10px 20px;
-  /*float: left;*/
-  /*position: relative;*/
-  /*min-height: contain-floats;*/
+  padding: 5px 20px 20px 20px;
 }
 
 header {
@@ -43,32 +34,19 @@ header {
 }
 
 main {
-  /*width: 100%;*/
-  /*padding-right: 20px;
-  padding-left: 0px;*/
-  /*float: left;*/
-  clear: both;
-  margin: none;
-  overflow: hidden;
-}
-
-body {
   width: 100%;
-  margin: 0px;
-  /*background: rgba(100,100,100,0.1);
-  clear: both;*/
+  padding: 20px;
+  float: left;
 }
 
 #content {
   width: 66%;
   float: left;
-  /*clear: both;*/
 }
 
 #sidebar {
   width: 33%;
   float: right;
-  /*clear: right;*/
 }
 
 
@@ -78,6 +56,7 @@ HEADER
 
 header {
   background: rgba(0,100,0,0.1);
+  margin: 20px 20px 20px 0px;
 }
 
 h1 {
@@ -85,7 +64,7 @@ h1 {
 }
 
 #nav-main {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 #nav-main ul {
@@ -104,11 +83,9 @@ h1 {
 MAIN
 ===================*/
 
-/*main {
+main {
   background: rgba(100,0,0,0.1);
-  width: 960px;
-  padding: 20px;
-}*/
+}
 
 #content {
   background: rgba(0,0,100,0.1);
@@ -143,7 +120,6 @@ SIDEBAR
 #sidebar ul {
   list-style-type: none;
   padding-left: 0px;
-  float: left;
 }
 
 #sidebar li {
@@ -159,7 +135,5 @@ footer {
   background: white;
   width: 100%;
   text-align: center;
-  clear:both;
   padding: 20px;
-  margin: auto;
 }
