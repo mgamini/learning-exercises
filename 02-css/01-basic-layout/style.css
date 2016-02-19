@@ -134,5 +134,7 @@ footer {
   background: white;
   width: 100%;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
+  float: left;
+  margin-top: 20px;
 }
