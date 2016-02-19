@@ -23,7 +23,7 @@ LAYOUT
 
 #wrapper {
   width: 960px;
-  margin: 0px auto;;
+  margin: 0px auto;
   background: rgba(0,100,100,0.1);
   padding: 5px 20px 20px 20px;
 }
@@ -89,7 +89,6 @@ main {
 
 #content {
   background: rgba(0,0,100,0.1);
-  padding: 5px 0px;
 }
 
 article {
