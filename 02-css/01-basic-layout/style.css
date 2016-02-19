@@ -23,10 +23,10 @@ LAYOUT
 
 #wrapper {
   width: 960px;
-  margin: 0px auto;
   background: rgba(0,100,100,0.1);
   padding: 5px 20px 20px 20px;
   float: left;
+  margin-left: 10%;
 }
 
 header {
@@ -135,7 +135,6 @@ footer {
   background: white;
   width: 100%;
   text-align: center;
-  padding: 10px;
   float: left;
   margin-top: 20px;
 }
