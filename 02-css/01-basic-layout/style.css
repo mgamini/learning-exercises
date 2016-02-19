@@ -26,6 +26,7 @@ LAYOUT
   margin: 0px auto;
   background: rgba(0,100,100,0.1);
   padding: 5px 20px 20px 20px;
+  float: left;
 }
 
 header {
