@@ -18,25 +18,80 @@ GENERAL
 LAYOUT
 ===================*/
 
+#wrapper {
+  width: 960px;
+}
 
+header {
+  width: 100%;
+}
 
+article {
+
+}
+
+footer {
+
+}
+
+#aboutus {
+
+}
 
 /*===================
 HEADER
 ===================*/
 
+nav {
 
+}
 
+ul {
 
+}
+
+li {
+
+}
 
 /*===================
 MAIN
 ===================*/
 
+#hero {
 
+}
 
+#hero-button {
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+  z-index: 1;
+  color: white;
+  background-color: pink;
+}
+
+#pinky {
+  position: relative;
+}
+
+#aboutus-content {
+
+}
+
+.img-float-left {
+  float: left;
+}
 
 
 /*===================
 FOOTER
 ===================*/
+
+footer {
+
+}
+
+p {
+
+}
