@@ -88,9 +88,6 @@ MAIN
   position: relative;;
   border-radius: 5px;
   padding: 10px 50px;
-  /*width: 100px;*/
-  /*height: 30px;*/
-  /*z-index: 2;*/
   text-decoration: none;
   color: white;
   background-color: pink;
@@ -99,18 +96,19 @@ MAIN
 }
 
 #pinky {
-  /*width: 60%;*/
   display: block;
   margin: 0px auto;
 
 }
 
 #aboutus-content {
-
+  width: 35%;
+  margin: 0% 30%;
 }
 
 .img-float-left {
   float: left;
+  padding: 50px;
 }
 
 
@@ -120,9 +118,10 @@ FOOTER
 
 footer {
   clear: both;
-  background-color: dimgray
+  background-color: dimgray;
 }
 
 footer p {
-
+  text-align: center;
+  padding-top: 50px;
 }
