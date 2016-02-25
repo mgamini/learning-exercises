@@ -18,8 +18,8 @@ GENERAL
 LAYOUT
 ===================*/
 
-#wrapper {
-  width: 960px;
+body {
+  width: 100%;
   margin: auto;
 }
 
@@ -50,20 +50,21 @@ nav {
 }
 
 #nav-logo img {
-  width: 30%;
-  height: 100%;
+  /*width: 30%;*/
+  /*height: 100%;*/
 }
 
 ul {
-  display: inline-block;
+  /*display: inline-block;*/
   float: right;
   padding: 20px 40px;
 }
 
 li {
   display: inline;
-  margin: 10px;
-  float: right;
+  padding: 20px;
+  /*margin: 10px;*/
+  /*float: right;*/
 }
 
 li a {
@@ -80,8 +81,6 @@ MAIN
 #hero {
   background-color: linen;
   padding: 110px 0px;
-  /*position: absolute;*/
-  /*z-index: 1;*/
 }
 
 #hero-button {
@@ -98,7 +97,6 @@ MAIN
 #pinky {
   display: block;
   margin: 0px auto;
-
 }
 
 #aboutus-content {
