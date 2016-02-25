@@ -25,7 +25,7 @@ LAYOUT
 
 header {
   width: 100%;
-
+  background-color: dimgray;
 }
 
 article {
@@ -34,7 +34,7 @@ article {
 }
 
 footer {
-
+  height: 110px;
 }
 
 #aboutus {
@@ -51,6 +51,7 @@ nav {
 
 #nav-logo img {
   width: 30%;
+  height: 100%;
 }
 
 ul {
@@ -77,8 +78,10 @@ MAIN
 ===================*/
 
 #hero {
-  position: absolute;
-  z-index: 1;
+  background-color: linen;
+  padding: 110px 0px;
+  /*position: absolute;*/
+  /*z-index: 1;*/
 }
 
 #hero-button {
@@ -87,15 +90,19 @@ MAIN
   padding: 10px 50px;
   /*width: 100px;*/
   /*height: 30px;*/
-  z-index: 2;
+  /*z-index: 2;*/
   text-decoration: none;
   color: white;
   background-color: pink;
   font-family: sans-serif;
+  margin-left: 40%;
 }
 
 #pinky {
-  width: 60%;
+  /*width: 60%;*/
+  display: block;
+  margin: 0px auto;
+
 }
 
 #aboutus-content {
@@ -112,7 +119,8 @@ FOOTER
 ===================*/
 
 footer {
-
+  clear: both;
+  background-color: dimgray
 }
 
 footer p {
