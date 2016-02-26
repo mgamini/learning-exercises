@@ -21,6 +21,7 @@ LAYOUT
 body {
   width: 100%;
   margin: auto;
+  font-family: sans-serif;
 }
 
 header {
@@ -30,10 +31,13 @@ header {
 }
 
 article {
-  width: 175px;
-  height: 400px;
-  /*display: inline-block;*/
+  width: 240px;
+  /*height: 400px;*/
   float: left;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
 }
 
 footer {
@@ -41,7 +45,7 @@ footer {
 }
 
 #aboutus {
-  background-color: #f0f0f0;
+  background-color: #fff1e8;
   padding: 20px;
   margin-bottom: -15px;
 }
@@ -51,34 +55,28 @@ HEADER
 ===================*/
 
 nav {
-  width: 960px;
+  width: 100%;
 }
 
-#nav-logo img {
-  /*width: 30%;*/
-  /*height: 100%;*/
-}
+/*#nav-logo img {
+
+}*/
 
 ul {
-  /*display: inline-block;*/
   float: right;
   padding: 25px;
   height: 100%;
-  /*min-width: 0px;*/
 }
 
 li {
   display: inline;
   padding: 20px;
-  /*margin: 10px;*/
-  /*float: right;*/
 }
 
 li a {
   text-decoration: none;
   color: white;
   text-transform: uppercase;
-  font-family: sans-serif;
 }
 
 /*===================
@@ -86,42 +84,46 @@ MAIN
 ===================*/
 
 #hero {
-  background-color: #f0f0f0;
-  padding: 50px 300px;
+  background-color: #fff1e8;
+  padding: 50px 35%;
 }
 
 #hero-button {
-  /*position: relative;*/
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px 50px;
   text-decoration: none;
   color: white;
-  background-color: #fff1e8;
-  font-family: sans-serif;
-  /*margin-left: 25%;*/
+  background-color: pink;
+  margin: 25%;
 }
 
-img #pinky {
+#features {
+  /*margin: auto;*/
+}
+
+#features-content {
+  margin: -30px 500px;
+  float: left;
+}
+
+#pinky {
   display: block;
   margin: 0px auto;
 }
 
-
-
 #aboutus-content {
-  /*width: 20%;*/
-  position: relative;
+  /*position: relative;*/
   margin: 30px 40%;
 }
 
 #aboutus-content p {
-  /*display: inline;*/
-  clear: left;
+  /*clear: left;*/
 }
 
 .img-float-left {
   float: left;
   padding: 30px;
+  margin-left: -30%;
 }
 
 /*===================
