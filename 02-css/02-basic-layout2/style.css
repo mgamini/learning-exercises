@@ -46,7 +46,8 @@ footer {
 
 #aboutus {
   background-color: #fff1e8;
-  padding: 20px;
+  /*padding: 20px;*/
+  margin-top: 50px;
   margin-bottom: -15px;
 }
 
@@ -94,7 +95,7 @@ MAIN
   text-decoration: none;
   color: white;
   background-color: pink;
-  margin: 25%;
+  margin: 22%;
 }
 
 #features {
@@ -117,7 +118,9 @@ MAIN
 }
 
 #aboutus-content p {
-  /*clear: left;*/
+  padding: 10px 30%;
+  float: right;
+  margin-right: -30%;
 }
 
 .img-float-left {
