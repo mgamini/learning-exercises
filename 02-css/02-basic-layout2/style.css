@@ -40,15 +40,12 @@ article {
   padding: 20px;
 }
 
-footer {
-  height: 100px;
-}
-
 #aboutus {
   background-color: #fff1e8;
   /*padding: 20px;*/
-  margin-top: 50px;
-  margin-bottom: -15px;
+  /*margin-top: 50px;*/
+  margin-bottom: -20px;
+  display: inline-block;
 }
 
 /*===================
@@ -58,10 +55,6 @@ HEADER
 nav {
   width: 100%;
 }
-
-/*#nav-logo img {
-
-}*/
 
 ul {
   float: right;
@@ -98,18 +91,18 @@ MAIN
   margin: 22%;
 }
 
-#features {
-  /*margin: auto;*/
-}
-
 #features-content {
-  margin: -30px 500px;
-  float: left;
+  margin: 0px 400px;
+  padding-left: 9%;
+  /*margin: -30px 500px;*/
+  /*padding-top: 30px;*/
+  /*float: left;*/
 }
 
 #pinky {
   display: block;
   margin: 0px auto;
+  padding-left: 9%;
 }
 
 #aboutus-content {
@@ -118,15 +111,16 @@ MAIN
 }
 
 #aboutus-content p {
-  padding: 10px 30%;
-  float: right;
-  margin-right: -30%;
+  padding: 10% 0px 0px 0px;
+  height: 500px;
+  /*float: right;*/
+  /*margin-right: -30%;*/
 }
 
 .img-float-left {
   float: left;
-  padding: 30px;
-  margin-left: -30%;
+  padding: 10% 10% 0px 0px;
+  margin-bottom: 10%;
 }
 
 /*===================
@@ -134,6 +128,7 @@ FOOTER
 ===================*/
 
 footer {
+  height: 100px;
   clear: both;
   background-color: #606060;
 }
