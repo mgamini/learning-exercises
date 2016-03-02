@@ -32,7 +32,7 @@ header {
 }
 
 article {
-  width: 250px;
+  width: 280px;
   /*height: 400px;*/
   float: left;
   background-color: #f0f0f0;
@@ -43,9 +43,9 @@ article {
 
 #aboutus {
   background-color: #fff1e8;
-  padding: 1%;
+  /*padding: 1%;*/
   /*margin-top: 50px;*/
-  margin-bottom: -20px;
+  /*margin-bottom: -20px;*/
   display: inline-block;
 }
 
@@ -85,48 +85,46 @@ MAIN
 
 #hero-button {
   border-radius: 10px;
-  padding: 10px 50px;
+  padding: 10px 75px;
   text-decoration: none;
   color: white;
   background-color: pink;
-  margin-left: 30%;
+  margin: 0px auto;
+  /*margin-left: 30%;*/
   /*margin: 22%;*/
 }
 
 #features-content {
-  margin: 0px 400px;
-  padding-left: 8%;
+  margin: 0px auto;
+  padding: 5px 10px;
+  /*padding-left: 8%;*/
   /*margin: -30px 500px;*/
   /*padding-top: 30px;*/
   /*float: left;*/
 }
 
 #hero img {
-  padding-left: 9%;
-}
-
-#pinky {
-  display: block;
   margin: 0px auto;
+  /*padding-left: 9%;*/
 }
 
 #aboutus-content {
   /*position: relative;*/
-  margin: 30px 36%;
+  /*margin: 30px 36%;*/
 }
 
 #aboutus-content p {
-  padding-right: 20px;
+  /*padding-right: 20px;*/
   /*padding: 10% 0px 0px 0px;*/
   /*height: 500px;*/
-  display: inline;
+  /*display: inline;*/
   /*float: right;*/
   /*margin-right: -30%;*/
 }
 
 .img-float-left {
   float: left;
-  padding: 0px 10% 5% 7%;
+  /*padding: 0px 10% 5% 7%;*/
   /*margin-bottom: 10%;*/
 }
 
@@ -136,7 +134,7 @@ FOOTER
 
 footer {
   height: 100px;
-  clear: both;
+  /*clear: both;*/
   background-color: #606060;
 }
 
